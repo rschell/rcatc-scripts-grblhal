@@ -133,10 +133,7 @@ o300 else
     G53 G0 Z[#<_rc_zone_one_z>]
     (debug, Move to zone 1)
     G4 P0
-    M66 P[#<_rc_rec_input>] L3 Q0.2
-    (debug, Read input: #5399)
-
-    o320 if [#5399 EQ -1]
+    o320 if [#<_probe_state> EQ 1]
       (debug, Input read timed out)
       G53 G0 Z[#<_rc_engage_z> + #<_rc_z_spin_off>]
       (debug, Go to spindle start)
@@ -148,9 +145,7 @@ o300 else
       G53 G0 Z[#<_rc_zone_one_z>]
       (debug, Move to zone 1)
       G4 P0
-      M66 P[#<_rc_rec_input>] L3 Q0.2
-      (debug, Input read again: #5399)
-      o330 if [#5399 EQ -1]
+      o330 if [#<_probe_state> EQ 1]
         (debug, Input read timed out again)
         G53 G0 Z[#<_rc_safe_z>]
         (debug, Go to safe clearance)
@@ -213,10 +208,7 @@ o400 elseif [#<_selected_tool> LE #<_rc_pockets>]
     G53 G0 Z[#<_rc_zone_one_z>]
     (debug, Move to zone 1)
     G4 P0
-    M66 P[#<_rc_rec_input>] L3 Q0.2
-    (debug, Read input: #5399)
-
-    o430 if [#5399 NE -1]
+    o430 if [#<_probe_state> NE 1]
       (debug, Failed Zone 1)
       G53 G0 Z[#<_rc_safe_z>]
       (debug, Moved to safe clearance)
@@ -229,9 +221,7 @@ o400 elseif [#<_selected_tool> LE #<_rc_pockets>]
       G53 G0 Z[#<_rc_zone_two_z>]
       (debug, Move to zone 2)
       G4 P0
-      M66 P[#<_rc_rec_input>] L3 Q0.2
-      (debug, Read input: #5399)
-      o440 if [#5399 EQ -1]
+      o440 if [#<_probe_state> EQ 1]
         G53 G0 Z[#<_rc_safe_z>]
         (debug, Moved to safe clearance)
         G53 G0 X[#<_rc_manual_x>] Y[#<_rc_manual_y>]
