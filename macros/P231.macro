@@ -110,8 +110,6 @@ o600 if [#<_rc_measure> EQ 1]
     (debug, Z Offset Calculated in G59.3: #<_rc_z_offset>)
   o610 endif
 
-  G53 G90 G0 Z[#<_rc_safe_z>]
-  (debug, Move to Z safe)
   G53 G0 X[#<_rc_measure_x>] Y[#<_rc_measure_y>]
   (debug, Move to tool setter XY)
   G53 G0 Z[#<_rc_measure_start_z>]
