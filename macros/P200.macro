@@ -83,7 +83,7 @@
 
 ; Manual Tool Change
 ; X and Y machine coordinates to move to for a manual load/unload.
-#<_rc_manual_x> = 160.00
+#<_rc_manual_x> = -160.00
 (debug, Manual X: #<_rc_manual_x>)
 #<_rc_manual_y> = -739.00
 (debug, Manual Y: #<_rc_manual_y>)
