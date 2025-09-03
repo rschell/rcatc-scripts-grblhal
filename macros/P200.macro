@@ -161,7 +161,7 @@
 (debug, Tool Measure Set Feed Rate: #<_rc_set_feed>)
 
 ; The optional reference position for TLO. This may remain at it's default of 0 or be customized.
-#<_rc_tlo_ref> = 0
+#<_rc_tlo_ref> = -110.98
 (debug, Tool Measure TLO Ref Pos: #<_rc_tlo_ref>)
 ; ********* END USER CONFIGURATION *********
 
