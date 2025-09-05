@@ -133,11 +133,9 @@ o600 if [#<_rc_measure> EQ 1]
     (debug, Ref Mach Pos: 0, Work Z after G43.1: #<_z>)
   o620 else
     (debug, Ref Mach Pos: #<_rc_tlo_ref>, Work Z before G43.1: #<_z>)
-    G43.1 Z[#<_rc_tlo_ref> - #<_rc_trigger_mach_z>]
+    G43.1 Z[#<_rc_trigger_mach_z> - #<_rc_tlo_ref>]
     (debug, Ref Mach Pos: #<_rc_tlo_ref>, Work Z after G43.1: #<_z>)
   o620 endif
-  $TLR
-  (debug, TLR set)
 o600 else
   ; Tool measure is disabled
   (debug, Tool measurement disabled)
